@@ -7,20 +7,20 @@ import os
 arcpy.env.overwriteOutput = True
 
 
-folder_path = "D:\LPA\Data"
+INPUT_FOLDER = "D:\LPA\Data"
 
-arcpy.env.workspace = r"D:\Porflolio\automation"
+arcpy.env.workspace = r"D:\Portfolio\automation"
 
 # Set local variables
-out_folder_path = r"D:\Porflolio\automation"
-out_name = "featuregdb.gdb"
+out_folder_path = r"D:\Portfolio\automation"
+OUTPUT_GDB = "featuregdb.gdb"
 
 # Execute CreateFileGDB
-arcpy.CreateFileGDB_management(out_folder_path, out_name)
+arcpy.CreateFileGDB_management(out_folder_path, OUTPUT_GDB)
 
 
 shapeFileList = []
-for root, dirs, files in os.walk(folder_path):
+for root, dirs, files in os.walk(INPUT_FOLDER):
     for file in files:                       
         if file.endswith((".shp", ".tif", ".geojson")):
             shapeFileList.append(file)
@@ -31,7 +31,7 @@ for file in shapeFileList:
     if not newName[0].isalpha():
         newName = f"f_{newName}"
     print(newName)
-    arcpy.conversion.FeatureClassToFeatureClass(r"{0}\{1}".format(folder_path, file), r"{0}\{1}".format(out_folder_path, out_name),f"{newName}")
+    arcpy.conversion.FeatureClassToFeatureClass(r"{0}\{1}".format(INPUT_FOLDER, file), r"{0}\{1}".format(out_folder_path, OUTPUT_GDB),f"{newName}")
 #D:\LPA_Data\ne_10m_admin_0_countries.shp
 
 
@@ -40,16 +40,16 @@ for file in shapeFileList:
 import arcpy
 import os
 
-arcpy.env.workspace = r"D:\Porflolio\automation"
+arcpy.env.workspace = r"D:\Portfolio\automation"
 
 # Set local variables
-out_folder_path = r"D:\Porflolio\automation"
-out_name2 = "tablegdb.gdb"
+out_folder_path = r"D:\Portfolio\automation"
+OUTPUT_GDB2 = "tablegdb.gdb"
 
-arcpy.CreateFileGDB_management(out_folder_path, out_name2)
+arcpy.CreateFileGDB_management(out_folder_path, OUTPUT_GDB2)
 
 
-input_folder = r"{0}\{1}".format(out_folder_path, out_name2)
+input_folder = r"{0}\{1}".format(out_folder_path, OUTPUT_GDB2)
 target_gdb = r"D:\LPA\Data"
 
 arcpy.env.workspace = target_gdb
@@ -74,17 +74,17 @@ for shapefile in shapefiles:
 ### Exported attribute tables as excel and csv files in each of their own sub fold
 
 
-folder_path = r"D:\portflolio\Excel_Folder"
-os.makedirs(folder_path, exist_ok=True)
+NEW_FOLDER = r"D:\portflolio\Excel_Folder"
+os.makedirs(NEW_FOLDER, exist_ok=True)
 # Set environment settings
-arcpy.env.workspace = r"{0}\{1}".format(out_folder_path, out_name2)
+arcpy.env.workspace = r"{0}\{1}".format(out_folder_path, OUTPUT_GDB2)
 
 tablefiles = arcpy.ListTables()
 if tablefiles:
     for tablefile in tablefiles:
         table_name = os.path.splitext(tablefile)[0]
         # Create a subfolder for this table
-        output_subfolder = os.path.join(folder_path, table_name)
+        output_subfolder = os.path.join(NEW_FOLDER, table_name)
         if not os.path.exists(output_subfolder):
             os.makedirs(output_subfolder)
         # Define the output Excel file path
