@@ -3,7 +3,7 @@
 ## **Overview**
 
 This portfolio demonstrates my ability to automate GIS workflows using Python. It includes tools for:
-1. Extracting and loading spatial data (shapefiles, GeoJSON, and raster files) into an ArcGIS and save their attribute tables as excel/csv files in each sub holder.
+1. Extracting and loading spatial data (shapefiles, GeoJSON, and raster files) into an ArcGIS and save their attribute tables as excel/csv files in each sub-holder.
 2. Automating the loading of shapefiles into a PostgreSQL/PostGIS database.
 
 ## **Features**
