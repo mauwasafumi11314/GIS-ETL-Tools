@@ -8,7 +8,7 @@ This portfolio demonstrates my ability to automate GIS workflows using Python. I
 
 ## **Features**
 
-### **[1. Load Spatial Data into a Geodatabase and Extract Attribute Tables as Excel/CSV Files](Shp_To_Table_And_Excel.py)**
+### **[1. Import Spatial Data into a Geodatabase and Export Attribute Tables as Excel/CSV Files](Shp_To_Table_And_Excel.py)**
 - Load all spatial data (shp, tif, geojson) from a folder onto a new geodatabase.
 - Extract attribute tables from shapefiles and save the tables in another geodatabase
 - Export attribute tables as excel and csv files in each of their own sub fold
