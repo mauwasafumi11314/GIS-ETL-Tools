@@ -4,7 +4,7 @@ import subprocess
 # Set your database credentials
 DB_NAME = "test"
 DB_USER = "postgres"
-DB_PASSWORD = "3141"
+DB_PASSWORD = "1111"
 DB_SCHEMA = "public"
 SRID = "4326"  # Change SRID if needed
 
