@@ -13,6 +13,6 @@ This portfolio demonstrates my ability to automate GIS workflows using Python. I
 - Extract attribute tables from shapefiles and save the tables in another geodatabase
 - Export attribute tables as excel and csv files in each of their own sub fold
 
-### **2. Load Spatial Data into PostgreSQL/PostGIS**
+### **2. Load Spatial Data into PostgreSQL with PostGIS extention**
 - Extract and load into a PostgreSQL/PostGIS database.
 
