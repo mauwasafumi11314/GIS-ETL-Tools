@@ -14,5 +14,5 @@ This portfolio demonstrates my ability to automate GIS workflows using Python. I
 - Export attribute tables as excel and csv files in each of their own sub fold
 
 ### **[2. Load Spatial Data into PostgreSQL with PostGIS extention](Shp_To_SQL.py)**
-- Extract and load into a PostgreSQL/PostGIS database.
+- Extract and load all spatial data from a folder into a PostgreSQL/PostGIS database.
 
